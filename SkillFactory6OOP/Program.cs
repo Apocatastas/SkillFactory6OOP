@@ -1,42 +1,39 @@
 ﻿using System;
+using System.Xml.Linq;
 
 class Program
 {
 
-    class Rectangle
+    class Company
     {
-        public int a;
-        public int b;
-
-        public int Square()
-        {
-            return a * b;
-        }
-
-        public Rectangle(int aSide, int bSide)
-        {
-            a = aSide;
-            b = bSide;
-        }
-
-        public Rectangle(int eqSides)
-        {
-            a = eqSides;
-            b = eqSides;
-        }
-
-        public Rectangle()
-        {
-            a = 6;
-            b = 4;
-        }
-
-
+        public string Type;
+        public string Name;
     }
+
+    class Department
+    {
+        public Company Company;
+        public City City;
+    }
+
+    class City
+    {
+        public string Name;
+    }
+    
+
+        static Department GetCurrentDepartment()
+        {
+        return null;
+        }
 
 
     public static void Main(string[] args)
     {
-
+    var department = GetCurrentDepartment();
+        if (department?.Company?.Type == "Банк" && department?.City?.Name == "Санкт-Петербург")
+        {
+            Console.WriteLine("У банка {0} есть отделение в Санкт-Петербурге", department?.Company?.Name ?? "Неизвестная компания");
+        }
     }
 }
