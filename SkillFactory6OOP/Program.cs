@@ -1,39 +1,26 @@
 ﻿using System;
-using System.Xml.Linq;
 
 class Program
 {
-
-    class Company
+    class Bus
     {
-        public string Type;
-        public string Name;
-    }
+        public int? Load;
 
-    class Department
-    {
-        public Company Company;
-        public City City;
-    }
-
-    class City
-    {
-        public string Name;
-    }
-    
-
-        static Department GetCurrentDepartment()
+        public void PrintStatus()
         {
-        return null;
+            if ((Load.HasValue)&&(Load > 0))
+            {
+                Console.WriteLine("В автобусе {0} пассажиров", Load.Value);
+            }
+            else
+            {
+                Console.WriteLine("Автобус пуст");
+            }
         }
-
+    }
 
     public static void Main(string[] args)
     {
-    var department = GetCurrentDepartment();
-        if (department?.Company?.Type == "Банк" && department?.City?.Name == "Санкт-Петербург")
-        {
-            Console.WriteLine("У банка {0} есть отделение в Санкт-Петербурге", department?.Company?.Name ?? "Неизвестная компания");
-        }
-    }
+
+    } 
 }
