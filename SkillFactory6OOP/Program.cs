@@ -2,22 +2,36 @@
 
 class Program
 {
-    class Pen
+
+    class Rectangle
     {
-        public string color;
-        public int cost;
+        public int a;
+        public int b;
 
-        public Pen()
+        public int Square()
         {
-            color = "Чёрный";
-            cost = 100;
+            return a * b;
         }
 
-        public Pen(string penColor, int penCost)
+        public Rectangle(int aSide, int bSide)
         {
-            color = penColor;
-            cost = penCost;
+            a = aSide;
+            b = bSide;
         }
+
+        public Rectangle(int eqSides)
+        {
+            a = eqSides;
+            b = eqSides;
+        }
+
+        public Rectangle()
+        {
+            a = 6;
+            b = 4;
+        }
+
+
     }
 
 
