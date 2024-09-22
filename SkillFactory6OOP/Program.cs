@@ -2,20 +2,17 @@
 
 class Program
 {
-    В классах нужно объявить поля для длин сторон(радиус) и
-        методы для получения площади и периметра(длины окружности)
-        без их реализации и без конструкторов.
 
     class Square
     {
-        int side;
+        public int side;
 
-        double Area()
+        public double Area()
         {
             return side * side;
         }
 
-        int Perimeter()
+        public int Perimeter()
         {
             return side * 4;
         }
@@ -23,21 +20,21 @@ class Program
 
     class Triangle
     {
-        int sideA;
-        int sideB;
-        int sideC;
+        public int sideA;
+        public int sideB;
+        public int sideC;
 
-        int Perimeter()
+        public int Perimeter()
         {
             return sideA + sideB + sideC;
         }
 
-        double HeronSideProcessor(int side)
+        public double HeronSideProcessor(int side)
         {
             return Perimeter() / 2 - side;
         }
 
-        double Area()
+        public double Area()
         {
             return Math.Sqrt( Perimeter() / 2
                               * HeronSideProcessor(sideA)
@@ -49,14 +46,14 @@ class Program
 
     class Circle
     {
-        int radius;
+        public int radius;
 
-        double circleLength()
+        public double circleLength()
         {
             return 2 * Math.PI * radius;
         }
 
-        double circleArea()
+        public double circleArea()
         {
             return Math.PI * radius * radius;
         }
